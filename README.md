@@ -6,16 +6,17 @@ This is a sample project by using mediation Admob include Ad-Network Vungle.
 This project may help to reproduce issues and narrow down the root cause.
 
 ## Getting Started
-This project is not include the app id and placement ids.
+1.This project is not include the app id and placement ids.
 Go to the file Constant.m and input your placement ids:
 ```
-NSString* const adUnitId = @"";
 NSString* const interstitialPlacement = @"";
 NSString* const rewardPlacement = @"";
-NSString* const bannerPlacement = @"";
-NSString* const mrecPlacement = @"";
+NSString* const bannerPlacement = @""; // Requires SDK 6.5+
 ```
-Run the commmand below with your terminal
+2.Update your Info.plist
+Update your Admob AppId in your Info.plist
+
+3.Run the commmand below with your terminal
 ```
 pod install --repo-update
 ```
