@@ -9,11 +9,9 @@ This project may help to reproduce issues and narrow down the root cause.
 This project is not include the app id and placement ids.
 Go to the file Constant.m and input your placement ids:
 ```
-NSString* const adUnitId = @"";
 NSString* const interstitialPlacement = @"";
 NSString* const rewardPlacement = @"";
-NSString* const bannerPlacement = @"";
-NSString* const mrecPlacement = @"";
+NSString* const bannerPlacement = @""; // Requires SDK 6.5+
 ```
 Run the commmand below with your terminal
 ```
