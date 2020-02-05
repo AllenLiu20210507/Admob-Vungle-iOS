@@ -1,6 +1,6 @@
 
-# Mopub iOS Mediation with Vungle SDK
-This is a sample project by using mediation Mopub include Ad-Network Vungle.
+# Admob iOS Mediation with Vungle SDK
+This is a sample project by using mediation Admob include Ad-Network Vungle.
 
 ## Goal
 This project may help to reproduce issues and narrow down the root cause.
@@ -33,7 +33,8 @@ pod 'GoogleMobileAdsMediationVungle'
 3. Run pod install to remove the frameworks from the project
 4. Integrate frameworks manually
 
-## For more details, please check Mopub integration document
+## For more details, please check 
+integration document
 
 
 ## Tested Version
