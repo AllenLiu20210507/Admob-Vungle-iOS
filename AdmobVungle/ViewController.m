@@ -103,8 +103,8 @@
     }
 }
 - (void)goBanner {
-   BannerVC *bannerVC = [[BannerVC alloc] init];
-    [self presentViewController:bannerVC animated:YES completion:nil];
+//   BannerVC *bannerVC = [[BannerVC alloc] init];
+//    [self presentViewController:bannerVC animated:YES completion:nil];
 }
 
 
