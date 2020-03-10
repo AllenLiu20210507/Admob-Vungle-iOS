@@ -35,7 +35,7 @@ pod 'GoogleMobileAdsMediationVungle'
 4. Integrate frameworks manually
 
 ## For more details, please check 
-integration document
+integration document(https://support.vungle.com/hc/en-us/articles/360002925791)
 
 
 ## Tested Version
