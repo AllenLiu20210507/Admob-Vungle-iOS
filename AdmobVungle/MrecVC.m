@@ -1,19 +1,18 @@
 //
-//  BannerVC.m
-//  admobvunglesample
+//  MrecVC.m
+//  AdmobVungle
 //
-//  Created by allen.liu on 2020/1/13.
+//  Created by allen.liu on 2020/9/15.
 //  Copyright © 2020 allen.liu. All rights reserved.
 //
 
-#import "BannerVC.h"
+#import "MrecVC.h"
 
-@interface BannerVC ()<GADBannerViewDelegate>
-@property (nonatomic) GADBannerView *bannerView;
-
+@interface MrecVC ()<GADBannerViewDelegate>
+@property (nonatomic) GADBannerView *mrecView;
 @end
 
-@implementation BannerVC
+@implementation MrecVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,20 +29,20 @@
     // Create MPAdView instance
     
     
-    self.bannerView = [[GADBannerView alloc]
-              initWithAdSize:kGADAdSizeBanner];
-    self.bannerView.adUnitID = bannerPlacement;
-    self.bannerView.rootViewController = self;
-    self.bannerView.delegate = self;
-    [self addBannerViewToView:self.bannerView];
+    self.mrecView = [[GADBannerView alloc]
+              initWithAdSize:kGADAdSizeMediumRectangle];
+    self.mrecView.adUnitID = mrecPlacement;
+    self.mrecView.rootViewController = self;
+    self.mrecView.delegate = self;
+    [self addBannerViewToView:self.mrecView];
     
-    UIButton *loadBanner = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    loadBanner.frame = CGRectMake(x, 120, 320, 80);
-    [loadBanner setTitle:@"Load & Play Banner" forState:UIControlStateNormal];
-    [loadBanner addTarget:self action:@selector(loadBanner) forControlEvents:UIControlEventTouchUpInside];
+    UIButton *loadmRrec = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    loadmRrec.frame = CGRectMake(x, 120, 320, 80);
+    [loadmRrec setTitle:@"Load & Play Mrec" forState:UIControlStateNormal];
+    [loadmRrec addTarget:self action:@selector(loadMREC) forControlEvents:UIControlEventTouchUpInside];
     
     
-    [self.view addSubview:loadBanner];
+    [self.view addSubview:loadmRrec];
     
 
    
@@ -72,10 +71,10 @@
 }
 
 #pragma mark - load & play
-- (void)loadBanner {
-      NSLog(@"loadBanner");
+- (void)loadMREC {
+     NSLog(@"loadMREC");
     // automatically refreshes an ad unit at a time interval specified via the MoPub web interface
-    [self.bannerView loadRequest:[GADRequest request]];
+    [self.mrecView loadRequest:[GADRequest request]];
 }
 
 
@@ -111,4 +110,15 @@
 - (void)adViewWillLeaveApplication:(GADBannerView *)adView {
   NSLog(@"adViewWillLeaveApplication");
 }
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
 @end

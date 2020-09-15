@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 extern NSString* const interstitialPlacement;
 extern NSString* const rewardPlacement;
 extern NSString* const bannerPlacement;
-
+extern NSString* const mrecPlacement;
 
 @interface Constant : NSObject
 

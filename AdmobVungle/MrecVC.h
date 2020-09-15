@@ -1,19 +1,20 @@
 //
-//  ViewController.h
+//  MrecVC.h
 //  AdmobVungle
 //
-//  Created by allen.liu on 2020/2/5.
+//  Created by allen.liu on 2020/9/15.
 //  Copyright © 2020 allen.liu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ViewController.h"
 #import <VungleSDK/VungleSDK.h>
 #import <VungleAdapter/VungleAdapter.h>
-#import "BannerVC.h"
 #import "Constant.h"
-#import "MrecVC.h"
 @import GoogleMobileAds;
-@interface ViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
+@interface MrecVC : UIViewController
 
 @end
+
+NS_ASSUME_NONNULL_END

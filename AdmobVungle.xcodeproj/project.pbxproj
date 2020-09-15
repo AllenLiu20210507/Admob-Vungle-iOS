@@ -20,6 +20,7 @@
 		37D5ED7923EA81C600914D93 /* AdmobVungleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5ED7823EA81C600914D93 /* AdmobVungleUITests.m */; };
 		37D5ED8A23EA8A4800914D93 /* BannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5ED8623EA8A4800914D93 /* BannerVC.m */; };
 		37D5ED8B23EA8A4800914D93 /* Constant.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D5ED8723EA8A4800914D93 /* Constant.m */; };
+		37D849692510A5FD00D0EFDD /* MrecVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 37D849682510A5FD00D0EFDD /* MrecVC.m */; };
 		5B84B942553F679A7AC58CBA /* libPods-AdmobVungle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A363CB864E59CD56E43B3FB /* libPods-AdmobVungle.a */; };
 		B308738D2CFEA205C9AE4509 /* libPods-AdmobVungleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E7EE819A1A0948E2CEFA588 /* libPods-AdmobVungleTests.a */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,8 @@
 		37D5ED8723EA8A4800914D93 /* Constant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constant.m; sourceTree = "<group>"; };
 		37D5ED8823EA8A4800914D93 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		37D5ED8923EA8A4800914D93 /* BannerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerVC.h; sourceTree = "<group>"; };
+		37D849672510A5FD00D0EFDD /* MrecVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MrecVC.h; sourceTree = "<group>"; };
+		37D849682510A5FD00D0EFDD /* MrecVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MrecVC.m; sourceTree = "<group>"; };
 		3FB35A9F881F6C3FA250802B /* Pods-AdmobVungleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmobVungleUITests.release.xcconfig"; path = "Target Support Files/Pods-AdmobVungleUITests/Pods-AdmobVungleUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5934E04A339E410B8DCE6F55 /* Pods-AdmobVungleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdmobVungleTests.release.xcconfig"; path = "Target Support Files/Pods-AdmobVungleTests/Pods-AdmobVungleTests.release.xcconfig"; sourceTree = "<group>"; };
 		68CEFF066C73BA957B7A799A /* libPods-AdmobVungleUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AdmobVungleUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +148,8 @@
 				37D5ED6223EA81C600914D93 /* Info.plist */,
 				37D5ED6323EA81C600914D93 /* main.m */,
 				37D5ED5A23EA81C500914D93 /* AdmobVungle.xcdatamodeld */,
+				37D849672510A5FD00D0EFDD /* MrecVC.h */,
+				37D849682510A5FD00D0EFDD /* MrecVC.m */,
 			);
 			path = AdmobVungle;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				37D5ED8A23EA8A4800914D93 /* BannerVC.m in Sources */,
 				37D5ED6423EA81C600914D93 /* main.m in Sources */,
 				37D5ED8B23EA8A4800914D93 /* Constant.m in Sources */,
+				37D849692510A5FD00D0EFDD /* MrecVC.m in Sources */,
 				37D5ED5C23EA81C500914D93 /* AdmobVungle.xcdatamodeld in Sources */,
 				37D5ED5623EA81C500914D93 /* ViewController.m in Sources */,
 				37D5ED5023EA81C500914D93 /* AppDelegate.m in Sources */,
@@ -569,13 +575,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4RLMPPVZ6T;
+				DEVELOPMENT_TEAM = GTA9LK7P23;
 				INFOPLIST_FILE = AdmobVungle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vungle.AdmobVungle;
+				PRODUCT_BUNDLE_IDENTIFIER = vungle.AdmobVungle111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -587,13 +593,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4RLMPPVZ6T;
+				DEVELOPMENT_TEAM = GTA9LK7P23;
 				INFOPLIST_FILE = AdmobVungle/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = vungle.AdmobVungle;
+				PRODUCT_BUNDLE_IDENTIFIER = vungle.AdmobVungle111;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

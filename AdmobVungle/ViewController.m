@@ -61,12 +61,17 @@
     [goBannerBtn setTitle:@"Go Banner(Requires SDK 6.5+)" forState:UIControlStateNormal];
     [goBannerBtn addTarget:self action:@selector(goBanner) forControlEvents:UIControlEventTouchUpInside];
     
+    UIButton *goMrecBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    goMrecBtn.frame = CGRectMake(x, y + 300, btnWidth, btnHeight);
+    [goMrecBtn setTitle:@"Go MREC(Requires SDK 6.5+)" forState:UIControlStateNormal];
+    [goMrecBtn addTarget:self action:@selector(goMrec) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:loadInterstitialBtn];
     [self.view addSubview:playIntersititalBtn];
     [self.view addSubview:loadRewardBtn];
     [self.view addSubview:playRewardBtn];
-//    [self.view addSubview:goBannerBtn];
+    [self.view addSubview:goBannerBtn];
+    [self.view addSubview:goMrecBtn];
 }
 
 
@@ -105,6 +110,11 @@
 - (void)goBanner {
    BannerVC *bannerVC = [[BannerVC alloc] init];
     [self presentViewController:bannerVC animated:YES completion:nil];
+}
+
+- (void)goMrec {
+   MrecVC *mrecVC = [[MrecVC alloc] init];
+    [self presentViewController:mrecVC animated:YES completion:nil];
 }
 
 
