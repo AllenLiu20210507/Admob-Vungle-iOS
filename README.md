@@ -19,6 +19,7 @@ Update your Admob AppId in your Info.plist
 3.
 - Delete the Podfile.lock 
 - Run the commmand below with your terminal
+
 ```
 pod install --repo-update
 ```
