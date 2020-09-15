@@ -23,22 +23,6 @@ pod install --repo-update
 
 You should good to go now!
 
-## Manually Integration
-1. Check out a new branch
-2. Comment Podfile frameworks as below
-```
-# comment below lines
-pod 'Google-Mobile-Ads-SDK'
-pod 'GoogleMobileAdsMediationVungle'
-```
-3. Run pod install to remove the frameworks from the project
-4. Integrate frameworks manually
-
-## For more details, please check 
-integration document(https://support.vungle.com/hc/en-us/articles/360002925791)
-
-
-## Tested Version
-Admob + Vungle + Adapter:
-7.53.1 + 6.4.6 + 6.4.6
+## TIP
+Master verison always be the latest version from Admob.
 
