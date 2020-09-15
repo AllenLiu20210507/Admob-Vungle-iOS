@@ -7,7 +7,7 @@ This project may help to reproduce issues and narrow down the root cause.
 
 ## Getting Started
 
--This project is not include the app id and placement ids.
+- This project is not include the app id and placement ids.
 Go to the file Constant.m and input your placement ids:
 ```
 NSString* const interstitialPlacement = @"";
@@ -15,7 +15,7 @@ NSString* const rewardPlacement = @"";
 NSString* const bannerPlacement = @""; // Requires SDK 6.5+
 ```
 
--Update your Info.plist
+- Update your Info.plist
 Update your Admob AppId in your Info.plist
 
 - Delete the Podfile.lock 
