@@ -16,7 +16,9 @@ NSString* const bannerPlacement = @""; // Requires SDK 6.5+
 2.Update your Info.plist
 Update your Admob AppId in your Info.plist
 
-3.Delete the Podfile.lock then Run the commmand below with your terminal
+3.
+- Delete the Podfile.lock 
+- Run the commmand below with your terminal
 ```
 pod install --repo-update
 ```
