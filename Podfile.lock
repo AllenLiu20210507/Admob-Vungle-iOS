@@ -1,17 +1,17 @@
 PODS:
-  - Google-Mobile-Ads-SDK (7.65.0):
+  - Google-Mobile-Ads-SDK (7.66.0):
     - GoogleAppMeasurement (~> 6.0)
     - GoogleUserMessagingPlatform (~> 1.1)
-  - GoogleAppMeasurement (6.8.2):
+  - GoogleAppMeasurement (6.9.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 6.7)
     - GoogleUtilities/MethodSwizzler (~> 6.7)
     - GoogleUtilities/Network (~> 6.7)
     - "GoogleUtilities/NSData+zlib (~> 6.7)"
     - nanopb (~> 1.30906.0)
-  - GoogleMobileAdsMediationVungle (6.7.1.0):
-    - Google-Mobile-Ads-SDK (>= 7.64.0)
-    - VungleSDK-iOS (= 6.7.1)
-  - GoogleUserMessagingPlatform (1.1.0)
+  - GoogleMobileAdsMediationVungle (6.8.1.0):
+    - Google-Mobile-Ads-SDK (>= 7.66.0)
+    - VungleSDK-iOS (= 6.8.0)
+  - GoogleUserMessagingPlatform (1.3.0)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -34,15 +34,15 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
-  - PromisesObjC (1.2.10)
-  - VungleSDK-iOS (6.7.1)
+  - PromisesObjC (1.2.11)
+  - VungleSDK-iOS (6.8.0)
 
 DEPENDENCIES:
-  - Google-Mobile-Ads-SDK
-  - GoogleMobileAdsMediationVungle
+  - Google-Mobile-Ads-SDK (= 7.66.0)
+  - GoogleMobileAdsMediationVungle (= 6.8.1.0)
 
 SPEC REPOS:
-  trunk:
+  https://github.com/CocoaPods/Specs.git:
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleMobileAdsMediationVungle
@@ -53,15 +53,15 @@ SPEC REPOS:
     - VungleSDK-iOS
 
 SPEC CHECKSUMS:
-  Google-Mobile-Ads-SDK: af735e001ee534d9dd2ce0a87cd8c355b19844b5
-  GoogleAppMeasurement: 1a66f478c68ecd6c16ee63ee60c7c3a648e6b337
-  GoogleMobileAdsMediationVungle: d5473dc51b1f2c31585feb4a7524b8c911d21201
-  GoogleUserMessagingPlatform: 9dc714d2e1f0aa727b9cc52d266dc1b155f4c3f2
+  Google-Mobile-Ads-SDK: 7d7074359c040f5add4e0963bf860e14690060d0
+  GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
+  GoogleMobileAdsMediationVungle: 2cf0bb73b3a83fc077511bca839d0316fba6bb2c
+  GoogleUserMessagingPlatform: 1d4b6946710d18cec34742054092e2c2bddae61f
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
-  PromisesObjC: b14b1c6b68e306650688599de8a45e49fae81151
-  VungleSDK-iOS: e9d4f16042b14a24a5bee290c1eb21452e9a81cf
+  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  VungleSDK-iOS: bbc198ef21540bde9b9748981b120ae2681738f7
 
-PODFILE CHECKSUM: a79258bfe9bcfca5a696a9e55f3c7b5ac5c4ba28
+PODFILE CHECKSUM: c1ebb341eb4d7e31742a942b74e71b593e7eaac4
 
 COCOAPODS: 1.8.4
