@@ -8,10 +8,10 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<GADBannerViewDelegate,GADRewardBasedVideoAdDelegate,GADInterstitialDelegate>
+@interface ViewController ()<GADBannerViewDelegate,GADInterstitialDelegate,GADRewardedAdDelegate>
 
 @property(nonatomic, strong) GADInterstitial *interstitial;
-
+@property(nonatomic, strong) GADRewardedAd *rewardedAd;
 @end
 
 @implementation ViewController
@@ -78,7 +78,8 @@
 
 # pragma mark - admob init, load & play
 - (void)initAdmob {
-    [GADRewardBasedVideoAd sharedInstance].delegate = self;
+    self.rewardedAd = [[GADRewardedAd alloc]
+          initWithAdUnitID:rewardPlacement];
       self.interstitial = [[GADInterstitial alloc]
       initWithAdUnitID:interstitialPlacement];
       self.interstitial.delegate = self;
@@ -98,14 +99,26 @@
 }
 
 - (void)loadReward {
-    [[GADRewardBasedVideoAd sharedInstance] loadRequest:[GADRequest request]
-    withAdUnitID:rewardPlacement];
+ 
+    
+    GADRequest *request = [GADRequest request];
+    [self.rewardedAd loadRequest:request completionHandler:^(GADRequestError * _Nullable error) {
+      if (error) {
+        // Handle ad failed to load case.
+          NSLog(@"rewardedAd:failed loaded.");
+      } else {
+        // Ad successfully loaded.
+          NSLog(@"rewardedAd:successfully loaded.");
+      }
+    }];
 }
 
 - (void)playReward {
-    if ([[GADRewardBasedVideoAd sharedInstance] isReady]) {
-      [[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:self];
-    }
+    if (self.rewardedAd.isReady) {
+       [self.rewardedAd presentFromRootViewController:self delegate:self];
+     } else {
+       NSLog(@"Ad wasn't ready");
+     }
 }
 - (void)goBanner {
    BannerVC *bannerVC = [[BannerVC alloc] init];
@@ -138,6 +151,7 @@
 - (void)rewardedAdDidDismiss:(GADRewardedAd *)rewardedAd {
   NSLog(@"rewardedAdDidDismiss:");
 }
+
 
 
 
