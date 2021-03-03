@@ -11,7 +11,7 @@ PODS:
   - GoogleMobileAdsMediationVungle (6.8.1.0):
     - Google-Mobile-Ads-SDK (>= 7.66.0)
     - VungleSDK-iOS (= 6.8.0)
-  - GoogleUserMessagingPlatform (1.3.0)
+  - GoogleUserMessagingPlatform (1.4.0)
   - GoogleUtilities/AppDelegateSwizzler (6.7.2):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -34,7 +34,7 @@ PODS:
     - nanopb/encode (= 1.30906.0)
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
-  - PromisesObjC (1.2.11)
+  - PromisesObjC (1.2.12)
   - VungleSDK-iOS (6.8.0)
 
 DEPENDENCIES:
@@ -56,12 +56,12 @@ SPEC CHECKSUMS:
   Google-Mobile-Ads-SDK: 7d7074359c040f5add4e0963bf860e14690060d0
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleMobileAdsMediationVungle: 2cf0bb73b3a83fc077511bca839d0316fba6bb2c
-  GoogleUserMessagingPlatform: 1d4b6946710d18cec34742054092e2c2bddae61f
+  GoogleUserMessagingPlatform: b168e8c46cd8f92aa3e34b584c4ca78a411ce367
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
-  PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   VungleSDK-iOS: bbc198ef21540bde9b9748981b120ae2681738f7
 
 PODFILE CHECKSUM: c1ebb341eb4d7e31742a942b74e71b593e7eaac4
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.0
