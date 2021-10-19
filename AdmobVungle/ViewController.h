@@ -12,6 +12,8 @@
 #import "BannerVC.h"
 #import "Constant.h"
 #import "MrecVC.h"
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#import <AdSupport/AdSupport.h>
 @import GoogleMobileAds;
 @interface ViewController : UIViewController
 

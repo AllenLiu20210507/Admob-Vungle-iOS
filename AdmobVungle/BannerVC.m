@@ -83,12 +83,12 @@
 - (void)adViewDidReceiveAd:(GADBannerView *)adView {
   NSLog(@"adViewDidReceiveAd");
 }
-
-#pragma mark Tells the delegate an ad request failed.
-- (void)adView:(GADBannerView *)adView
-    didFailToReceiveAdWithError:(GADRequestError *)error {
-  NSLog(@"adView:didFailToReceiveAdWithError: %@", [error localizedDescription]);
-}
+//
+//#pragma mark Tells the delegate an ad request failed.
+//- (void)adView:(GADBannerView *)adView
+//    didFailToReceiveAdWithError:(GADRequestError *)error {
+//  NSLog(@"adView:didFailToReceiveAdWithError: %@", [error localizedDescription]);
+//}
 
 #pragma mark Tells the delegate that a full-screen view will be presented in response
 #pragma mark to the user clicking on an ad.
