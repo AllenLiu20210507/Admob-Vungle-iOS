@@ -9,7 +9,7 @@
 #import "Constant.h"
 
 @implementation Constant
-NSString* const interstitialPlacement = @"";
+NSString* const interstitialPlacement = @"ca-app-pub-3457444409853179/2696329301";
 NSString* const rewardPlacement = @"ca-app-pub-3457444409853179/7705076072";
 NSString* const bannerPlacement = @""; // Requires SDK 6.5+
 NSString* const mrecPlacement = @""; // Requires SDK 6.5+

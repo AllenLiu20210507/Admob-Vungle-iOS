@@ -103,7 +103,8 @@
       }
     self.interstitial = ad;
     self.interstitial.fullScreenContentDelegate = self;
-  
+        
+        NSLog(@" Allen interstitial ad loaded.");
     }];
 }
 

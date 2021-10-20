@@ -8,8 +8,11 @@ target 'AdmobVungle' do
   # use_frameworks!
 
   # Pods for AdmobVungle
-   pod 'Google-Mobile-Ads-SDK', '8.10.0'
-   pod 'GoogleMobileAdsMediationVungle', '6.10.3.0'
+pod 'Google-Mobile-Ads-SDK', '8.11.0'
+pod 'GoogleMobileAdsMediationVungle', '6.10.3.0'
+
+
+
 
 
   target 'AdmobVungleTests' do
