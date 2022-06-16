@@ -10,7 +10,11 @@
 
 @implementation Constant
 NSString* const interstitialPlacement = @"";
+<<<<<<< Updated upstream
 NSString* const rewardPlacement = @"ca-app-pub-3457444409853179/7705076072";
+=======
+NSString* const rewardPlacement = @"ca-app-pub-1084426481718910/7637640614";
+>>>>>>> Stashed changes
 NSString* const bannerPlacement = @""; // Requires SDK 6.5+
 NSString* const mrecPlacement = @""; // Requires SDK 6.5+
 

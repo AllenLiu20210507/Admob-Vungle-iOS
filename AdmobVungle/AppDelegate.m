@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+<<<<<<< Updated upstream
+=======
+@import GoogleMobileAds;
+>>>>>>> Stashed changes
 @interface AppDelegate ()
 
 @end
@@ -17,6 +21,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+<<<<<<< Updated upstream
+=======
+    [[GADMobileAds sharedInstance] startWithCompletionHandler:nil];
+//    GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers = @[ @"34dfeb51f065595634d1b70de405c908" ];
+>>>>>>> Stashed changes
     return YES;
 }
 

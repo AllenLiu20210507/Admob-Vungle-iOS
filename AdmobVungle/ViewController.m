@@ -7,6 +7,14 @@
 //
 
 #import "ViewController.h"
+<<<<<<< Updated upstream
+=======
+@import GoogleMobileAdsMediationTestSuite;
+#if defined(__IPHONE_14_0) && __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_14_0
+#import <AppTrackingTransparency/AppTrackingTransparency.h>
+#endif
+@interface ViewController ()<GADBannerViewDelegate,GADFullScreenContentDelegate,GADNativeAdDelegate>
+>>>>>>> Stashed changes
 
 @interface ViewController ()<GADBannerViewDelegate,GADInterstitialDelegate,GADRewardedAdDelegate>
 
@@ -21,6 +29,22 @@
     // Do any additional setup after loading the view.
     [self createView];
     [self initAdmob];
+<<<<<<< Updated upstream
+=======
+    
+//    [GoogleMobileAdsMediationTestSuite presentOnViewController:self delegate:nil];
+    // Do any additional setup after loading the view.
+    if (@available(iOS 14, *)) {
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+        }];
+    }
+
+    // Do any additional setup after loading the view.
+    if (@available(iOS 14, *)) {
+        [ATTrackingManager requestTrackingAuthorizationWithCompletionHandler:^(ATTrackingManagerAuthorizationStatus status) {
+        }];
+    }
+>>>>>>> Stashed changes
 }
 
 - (void)createView {
@@ -78,6 +102,7 @@
 
 # pragma mark - admob init, load & play
 - (void)initAdmob {
+<<<<<<< Updated upstream
     self.rewardedAd = [[GADRewardedAd alloc]
           initWithAdUnitID:rewardPlacement];
       self.interstitial = [[GADInterstitial alloc]
@@ -86,6 +111,19 @@
 }
 
 - (void)loadInterstitial {
+=======
+    
+    
+
+
+
+     
+}
+
+- (void)loadInterstitial {
+    
+  
+>>>>>>> Stashed changes
     GADRequest *request = [GADRequest request];
      [self.interstitial loadRequest:request];
 }
@@ -114,11 +152,41 @@
 }
 
 - (void)playReward {
+<<<<<<< Updated upstream
     if (self.rewardedAd.isReady) {
        [self.rewardedAd presentFromRootViewController:self delegate:self];
      } else {
        NSLog(@"Ad wasn't ready");
      }
+=======
+    if (self.rewardedAd) {
+      [self.rewardedAd presentFromRootViewController:self
+                                    userDidEarnRewardHandler:^{
+                                    GADAdReward *reward =
+                                        self.rewardedAd.adReward;
+          self.rewardedAd.responseInfo.adNetworkClassName;
+                                    // TODO: Reward the user!
+          NSLog(@"Allen userDidEarnRewardHandler%@",self.rewardedAd.responseInfo.adNetworkClassName);
+          NSLog(@"Allen userDidEarnRewardHandler%@",self.rewardedAd.responseInfo.adNetworkInfoArray[0]);
+          
+                                  }];
+        GADRequest *request = [GADRequest request];
+        [GADRewardedAd
+             loadWithAdUnitID:rewardPlacement
+                      request:request
+            completionHandler:^(GADRewardedAd *ad, NSError *error) {
+              if (error) {
+                NSLog(@" Allen Rewarded ad failed to load with error: %@", [error localizedDescription]);
+                return;
+              }
+              self.rewardedAd = ad;
+            self.rewardedAd.fullScreenContentDelegate = self;
+              NSLog(@" Allen Rewarded ad loaded.");
+            }];
+    } else {
+      NSLog(@"Allen Ad wasn't ready");
+    }
+>>>>>>> Stashed changes
 }
 - (void)goBanner {
    BannerVC *bannerVC = [[BannerVC alloc] init];
@@ -156,6 +224,7 @@
 
 
 
+<<<<<<< Updated upstream
 #pragma mark Tells the delegate an ad request succeeded.
 - (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
   NSLog(@"interstitialDidReceiveAd");
@@ -180,6 +249,20 @@
 #pragma mark Tells the delegate the interstitial had been animated off the screen.
 - (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
   NSLog(@"interstitialDidDismissScreen");
+=======
+/// Tells the delegate that the ad failed to present full screen content.
+- (void)ad:(nonnull id<GADFullScreenPresentingAd>)ad
+didFailToPresentFullScreenContentWithError:(nonnull NSError *)error {
+    NSLog(@"Allen Ad did fail to present full screen content.");
+    
+}
+
+/// Tells the delegate that the ad presented full screen content.
+- (void)adDidPresentFullScreenContent:(nonnull id<GADFullScreenPresentingAd>)ad {
+    NSLog(@"Allen Ad did present full screen content.");
+    
+    
+>>>>>>> Stashed changes
 }
 
 #pragma mark Tells the delegate that a user click will open another app
