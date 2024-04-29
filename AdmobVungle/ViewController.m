@@ -8,10 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()<GADBannerViewDelegate,GADInterstitialDelegate,GADRewardedAdDelegate>
+@interface ViewController ()<GADBannerViewDelegate>
 
-@property(nonatomic, strong) GADInterstitial *interstitial;
+@property(nonatomic, strong) GADInterstitialAd *interstitial;
 @property(nonatomic, strong) GADRewardedAd *rewardedAd;
+
 @end
 
 @implementation ViewController
@@ -20,7 +21,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self createView];
-    [self initAdmob];
+//    [self initAdmob];'
+    GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers =
+        @[ @"892669d72d6a165ddd8170aac86eccda"];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    if (animated) {
+        [GADMobileAds.sharedInstance presentAdInspectorFromViewController:self
+          completionHandler:^(NSError *error) {
+            // Error will be non-nil if; there was an issue and the inspector was not displayed.
+//            NSLog(error);
+            float y = 100;
+          
+        }];
+    }
 }
 
 - (void)createView {
@@ -49,7 +64,7 @@
     UIButton *loadRewardBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     loadRewardBtn.frame = CGRectMake(x, y + 100, btnWidth, btnHeight);
     [loadRewardBtn setTitle:@"Load Reward" forState:UIControlStateNormal];
-    [loadRewardBtn addTarget:self action:@selector(loadReward) forControlEvents:UIControlEventTouchUpInside];
+    [loadRewardBtn addTarget:self action:@selector(loadRewardedAd) forControlEvents:UIControlEventTouchUpInside];
 
     UIButton *playRewardBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     playRewardBtn.frame = CGRectMake(x, y + 150, btnWidth, btnHeight);
@@ -76,115 +91,117 @@
 
 
 
-# pragma mark - admob init, load & play
-- (void)initAdmob {
-    self.rewardedAd = [[GADRewardedAd alloc]
-          initWithAdUnitID:rewardPlacement];
-      self.interstitial = [[GADInterstitial alloc]
-      initWithAdUnitID:interstitialPlacement];
-      self.interstitial.delegate = self;
+//# pragma mark - admob init, load & play
+//- (void)initAdmob {
+//    self.rewardedAd = [[GADRewardedAd alloc]
+//          initWithAdUnitID:rewardPlacement];
+//      self.interstitial = [[GADInterstitial alloc]
+//      initWithAdUnitID:interstitialPlacement];
+//      self.interstitial.delegate = self;
+//}
+//
+//- (void)loadInterstitial {
+//    GADRequest *request = [GADRequest request];
+//     [self.interstitial loadRequest:request];
+//}
+//
+//- (void)playInterstitial {
+//    if (self.interstitial.isReady) {
+//      [self.interstitial presentFromRootViewController:self];
+//    } else {
+//      NSLog(@"Ad wasn't ready");
+//    }
+//}
+
+- (void)loadRewardedAd {
+  GADRequest *request = [GADRequest request];
+  GADMobileAds.sharedInstance.requestConfiguration.testDeviceIdentifiers =
+        @[ @"892669d72d6a165ddd8170aac86eccda"];
+  [GADRewardedAd
+      loadWithAdUnitID:rewardPlacement
+                request:request
+      completionHandler:^(GADRewardedAd *ad, NSError *error) {
+        if (error) {
+          NSLog(@"Rewarded ad failed to load with error: %@", [error localizedDescription]);
+          return;
+        }
+        self.rewardedAd = ad;
+        NSLog(@"Rewarded ad loaded.");
+      }];
 }
-
-- (void)loadInterstitial {
-    GADRequest *request = [GADRequest request];
-     [self.interstitial loadRequest:request];
-}
-
-- (void)playInterstitial {
-    if (self.interstitial.isReady) {
-      [self.interstitial presentFromRootViewController:self];
-    } else {
-      NSLog(@"Ad wasn't ready");
-    }
-}
-
-- (void)loadReward {
- 
-    
-    GADRequest *request = [GADRequest request];
-    [self.rewardedAd loadRequest:request completionHandler:^(GADRequestError * _Nullable error) {
-      if (error) {
-        // Handle ad failed to load case.
-          NSLog(@"rewardedAd:failed loaded.");
-      } else {
-        // Ad successfully loaded.
-          NSLog(@"rewardedAd:successfully loaded.");
-      }
-    }];
-}
-
-- (void)playReward {
-    if (self.rewardedAd.isReady) {
-       [self.rewardedAd presentFromRootViewController:self delegate:self];
-     } else {
-       NSLog(@"Ad wasn't ready");
-     }
-}
-- (void)goBanner {
-   BannerVC *bannerVC = [[BannerVC alloc] init];
-    [self presentViewController:bannerVC animated:YES completion:nil];
-}
-
-- (void)goMrec {
-   MrecVC *mrecVC = [[MrecVC alloc] init];
-    [self presentViewController:mrecVC animated:YES completion:nil];
-}
-
-
-#pragma mark Tells the delegate that the user earned a reward.
-- (void)rewardedAd:(GADRewardedAd *)rewardedAd userDidEarnReward:(GADAdReward *)reward {
-  // TODO: Reward the user.
-  NSLog(@"rewardedAd:userDidEarnReward:");
-}
-
-#pragma mark Tells the delegate that the rewarded ad was presented.
-- (void)rewardedAdDidPresent:(GADRewardedAd *)rewardedAd {
-  NSLog(@"rewardedAdDidPresent:");
-}
-
-#pragma mark Tells the delegate that the rewarded ad failed to present.
-- (void)rewardedAd:(GADRewardedAd *)rewardedAd didFailToPresentWithError:(NSError *)error {
-  NSLog(@"rewardedAd:didFailToPresentWithError");
-}
-
-#pragma mark Tells the delegate that the rewarded ad was dismissed.
-- (void)rewardedAdDidDismiss:(GADRewardedAd *)rewardedAd {
-  NSLog(@"rewardedAdDidDismiss:");
-}
-
-
-
-
-
-#pragma mark Tells the delegate an ad request succeeded.
-- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
-  NSLog(@"interstitialDidReceiveAd");
-}
-
-#pragma mark Tells the delegate an ad request failed.
-- (void)interstitial:(GADInterstitial *)ad
-    didFailToReceiveAdWithError:(GADRequestError *)error {
-  NSLog(@"interstitial:didFailToReceiveAdWithError: %@", [error localizedDescription]);
-}
-
-#pragma mark Tells the delegate that an interstitial will be presented.
-- (void)interstitialWillPresentScreen:(GADInterstitial *)ad {
-  NSLog(@"interstitialWillPresentScreen");
-}
-
-#pragma mark Tells the delegate the interstitial is to be animated off the screen.
-- (void)interstitialWillDismissScreen:(GADInterstitial *)ad {
-  NSLog(@"interstitialWillDismissScreen");
-}
-
-#pragma mark Tells the delegate the interstitial had been animated off the screen.
-- (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
-  NSLog(@"interstitialDidDismissScreen");
-}
-
-#pragma mark Tells the delegate that a user click will open another app
-#pragma mark (such as the App Store), backgrounding the current app.
-- (void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
-  NSLog(@"interstitialWillLeaveApplication");
-}
+//
+//- (void)playReward {
+//    if (self.rewardedAd.isReady) {
+//       [self.rewardedAd presentFromRootViewController:self delegate:self];
+//     } else {
+//       NSLog(@"Ad wasn't ready");
+//     }
+//}
+//- (void)goBanner {
+//   BannerVC *bannerVC = [[BannerVC alloc] init];
+//    [self presentViewController:bannerVC animated:YES completion:nil];
+//}
+//
+//- (void)goMrec {
+//   MrecVC *mrecVC = [[MrecVC alloc] init];
+//    [self presentViewController:mrecVC animated:YES completion:nil];
+//}
+//
+//
+//#pragma mark Tells the delegate that the user earned a reward.
+//- (void)rewardedAd:(GADRewardedAd *)rewardedAd userDidEarnReward:(GADAdReward *)reward {
+//  // TODO: Reward the user.
+//  NSLog(@"rewardedAd:userDidEarnReward:");
+//}
+//
+//#pragma mark Tells the delegate that the rewarded ad was presented.
+//- (void)rewardedAdDidPresent:(GADRewardedAd *)rewardedAd {
+//  NSLog(@"rewardedAdDidPresent:");
+//}
+//
+//#pragma mark Tells the delegate that the rewarded ad failed to present.
+//- (void)rewardedAd:(GADRewardedAd *)rewardedAd didFailToPresentWithError:(NSError *)error {
+//  NSLog(@"rewardedAd:didFailToPresentWithError");
+//}
+//
+//#pragma mark Tells the delegate that the rewarded ad was dismissed.
+//- (void)rewardedAdDidDismiss:(GADRewardedAd *)rewardedAd {
+//  NSLog(@"rewardedAdDidDismiss:");
+//}
+//
+//
+//
+//
+//
+//#pragma mark Tells the delegate an ad request succeeded.
+//- (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
+//  NSLog(@"interstitialDidReceiveAd");
+//}
+//
+//#pragma mark Tells the delegate an ad request failed.
+//- (void)interstitial:(GADInterstitial *)ad
+//    didFailToReceiveAdWithError:(GADRequestError *)error {
+//  NSLog(@"interstitial:didFailToReceiveAdWithError: %@", [error localizedDescription]);
+//}
+//
+//#pragma mark Tells the delegate that an interstitial will be presented.
+//- (void)interstitialWillPresentScreen:(GADInterstitial *)ad {
+//  NSLog(@"interstitialWillPresentScreen");
+//}
+//
+//#pragma mark Tells the delegate the interstitial is to be animated off the screen.
+//- (void)interstitialWillDismissScreen:(GADInterstitial *)ad {
+//  NSLog(@"interstitialWillDismissScreen");
+//}
+//
+//#pragma mark Tells the delegate the interstitial had been animated off the screen.
+//- (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
+//  NSLog(@"interstitialDidDismissScreen");
+//}
+//
+//#pragma mark Tells the delegate that a user click will open another app
+//#pragma mark (such as the App Store), backgrounding the current app.
+//- (void)interstitialWillLeaveApplication:(GADInterstitial *)ad {
+//  NSLog(@"interstitialWillLeaveApplication");
+//}
 @end

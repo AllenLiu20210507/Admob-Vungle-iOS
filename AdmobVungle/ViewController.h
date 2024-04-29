@@ -7,8 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <VungleSDK/VungleSDK.h>
-#import <VungleAdapter/VungleAdapter.h>
 #import "BannerVC.h"
 #import "Constant.h"
 #import "MrecVC.h"

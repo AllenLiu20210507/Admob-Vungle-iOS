@@ -7,8 +7,6 @@
 //
 
 #import "ViewController.h"
-#import <VungleSDK/VungleSDK.h>
-#import <VungleAdapter/VungleAdapter.h>
 #import "Constant.h"
 @import GoogleMobileAds;
 NS_ASSUME_NONNULL_BEGIN

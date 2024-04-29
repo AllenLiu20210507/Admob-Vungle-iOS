@@ -10,7 +10,7 @@
 
 @implementation Constant
 NSString* const interstitialPlacement = @"";
-NSString* const rewardPlacement = @"ca-app-pub-3457444409853179/7705076072";
+NSString* const rewardPlacement = @"ca-app-pub-4627334615129278/4011109536";
 NSString* const bannerPlacement = @""; // Requires SDK 6.5+
 NSString* const mrecPlacement = @""; // Requires SDK 6.5+
 
